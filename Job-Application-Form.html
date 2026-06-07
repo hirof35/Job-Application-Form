@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アルバイト応募フォーム</title>
+  <style>
+    /* 簡単なスタイリング */
+    dt { margin-top: 15px; font-weight: bold; }
+    dd { margin-left: 0; margin-bottom: 10px; }
+    form { max-width: 400px; }
+  </style>
+</head>
+<body>
+  <h1>アルバイト応募フォーム</h1>
+  <form action="/submit-endpoint" method="post">
+    <dl>
+      <dt><label for="username">お名前</label></dt>
+      <dd><input id="username" name="username" type="text" required placeholder="山田 太郎"></dd>
+
+      <dt><label for="email">メールアドレス</label></dt>
+      <dd><input id="email" name="email" type="email" required placeholder="example@mail.com"></dd>
+
+      <fieldset>
+        <legend>性別</legend>
+        <label><input type="radio" name="gender" value="male" checked> 男性</label>
+        <label><input type="radio" name="gender" value="female"> 女性</label>
+      </fieldset>
+
+      <dt><label for="job">現在のご職業</label></dt>
+      <dd>
+        <select name="job" id="job" required>
+          <option value="">選択してください</option>
+          <option value="student">学生</option>
+          <option value="jobless">無職</option>
+          <option value="other">その他</option>
+        </select>
+      </dd>
+      
+      <dt><label for="pr">自己PR</label></dt>
+      <dd><textarea name="pr" id="pr" rows="4" cols="30"></textarea></dd>
+
+      <dd>
+        <label>
+          <input type="checkbox" id="privacy" name="privacy" required>
+          プライバシーポリシーに同意する
+        </label>
+      </dd>
+
+      <dd><button type="submit">送信する</button></dd>
+    </dl>
+  </form>
+</body>
+</html>
